@@ -1,14 +1,6 @@
 // Sorting ///// ///
 // bubble Sorting
 
-// public class InnerDSA {
-skjfxvlkcsdxvfx
-    
-// }
-
-
-
-
 public class Current {
 
     public static void printarray(int arr[]){
