@@ -1,0 +1,2 @@
+Hello, this is a file handling demo.
+We are writing into the file.
