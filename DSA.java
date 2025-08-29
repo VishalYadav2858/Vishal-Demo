@@ -6,6 +6,9 @@ skjfxvlkcsdxvfx
     
 // }
 
+
+
+
 public class Current {
 
     public static void printarray(int arr[]){
