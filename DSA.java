@@ -1,18 +1,18 @@
 // Sorting ///// ///
 // bubble Sorting
 
-
 // dfsvfdgvf
- 
-public class Current {
- 
 
-        for (int i = 0; i < arr.length; i++) {
+public class Current {
+
+    for(
+    int i = 0;i<arr.length;i++)
+    {
             System.out.print(arr[i]+ " ");
             
         }
 
-    }      
+    }
 
     public  static void main(String[] args) {
         int arr[] = {7,8,3,1,2};  
@@ -68,6 +68,119 @@ public class Current {
             arr[smallest] = arr[i];
             arr[i] = temp;
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Array /// 
+
+// calculate thr suum of all the array in the given array
+public class current {
+    void sumofarray(){
+        int arr[] = {2,4,5,7};
+        int sum =0;
+
+        for (int i = 0; i < arr.length; i++) {
+            sum = sum+arr[i];
+
+        }
+        System.out.println(sum);
+    }
+    
+    public static void main(String[] args) {
+        current obj = new current();
+        obj.sumofarray();         
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// find the bigggest element in the array 
+
+public class current {
+    void biggestarray(){
+        int arr[] = {2,4,5,7};
+        int bigggest =0;
+        
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i]>bigggest) {
+                bigggest = arr[i];
+                
+            }
+            
+        }
+        System.out.print(bigggest);
+
+    }
+    
+    public static void main(String[] args) {
+        current obj = new current();
+        obj.biggestarray();         
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+// find the bigggest element in the array 
+
+public class current {
+    void biggestarray(){
+        int arr[] = {2,4,5,7};
+        int bigggest =0;
+        
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i]>bigggest) {
+                bigggest = arr[i];
+                
+            }
+            
+        }
+        System.out.print(bigggest);
+
+    }
+    
+    public static void main(String[] args) {
+        current obj = new current();
+        obj.biggestarray();         
+    }
+}
+
+
+
+
 
 
 
