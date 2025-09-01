@@ -186,46 +186,80 @@ public class current {
 
 
 
-public class DSA {
 
-    // Node class
-    public static class Node {
-        int data;
-        Node next;
 
-        public Node(int data) {
-            this.data = data;
-            this.next = null;
-        }
-    }
 
-    // Stack class
-    public static class Stack {
-        private Node head; // top of stack (❌ removed static)
 
-        // check if stack is empty
-        public boolean isEmpty() {
-            return head == null;
-        }
 
-        // push method (✔ moved inside Stack class)
-        public void push(int data) {
-            Node newNode = new Node(data);
-            if (isEmpty()) {
-                head = newNode;
-                return;
+
+
+
+
+
+// Search if the element is present -> return index or else -1
+public class Current {
+    public int presentElement(int element) {
+        int arr[] = {2, 4, 5, 7};
+
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == element) {
+                return i; // return index
             }
-            newNode.next = head;
-            head = newNode;
         }
+        return -1; // not found
     }
 
     public static void main(String[] args) {
-        Stack s = new Stack();
-        s.push(10);
-        s.push(20);
-        s.push(30);
-        System.out.println();
-        System.out.println("Code runs without error now ✅");
+        Current obj = new Current();
+        int elementToSearch = 5;   // try changing this value
+        int index = obj.presentElement(elementToSearch);
+
+        if (index != -1) {
+            System.out.println("Element " + elementToSearch + " found at index: " + index);
+        } else {
+            System.out.println("Element " + elementToSearch + " not found.");
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// reversing an array
+
+
+public class ReverseArray {
+    public static void main(String[] args) {
+        int arr[] = {2, 4, 5, 7};
+
+        System.out.println("Original Array:");
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + " ");
+        }
+
+        // Reverse using for loop
+        for (int i = 0; i < arr.length / 2; i++) {
+            int temp = arr[i];
+            arr[i] = arr[arr.length - 1 - i];
+            arr[arr.length - 1 - i] = temp;
+        }
+
+        System.out.println("\nReversed Array:");
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + " ");
+        }
     }
 }
