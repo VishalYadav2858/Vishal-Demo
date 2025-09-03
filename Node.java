@@ -4,16 +4,6 @@
 
 import java.util.*;
 
-public static void Node(int head) {
-
-    while (head!= null) {
-        for (int i = 0; i <= 5; i++) {
-            System.out.println(head.data + " ");
-            head = head.next;
-        }
-    }
-}
-
 public class Node {
 
     int data;
@@ -21,6 +11,19 @@ public class Node {
 
     Node(int data) {
         this.data = data;
+
+    }
+
+    // length methodd
+    public static int length(Node head) {
+
+        int count = 0;
+        while (head != null) {
+            head = head.next;
+            count++;
+
+        }
+        return count;
 
     }
 
@@ -37,7 +40,20 @@ public class Node {
         c.next = d;
         d.next = e;
 
-        Node temp = a;
-
+        System.out.println(length(a));
+        System.out.println("Length: " + length(a));
     }
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
