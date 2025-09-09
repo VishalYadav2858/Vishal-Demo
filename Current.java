@@ -2,14 +2,8 @@
 import java.util.*;
 
 
-
-
-
-
-
-
 // Merge
-public class Merge {
+public class Current {
     public static void conquer(int arr[], int si, int mid, int ei) {
         int merged[] = new int[ei - si + 1];
 
