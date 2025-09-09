@@ -182,11 +182,10 @@ public class DSA {
 
 
 
-// Quick sort
+/// Quick sort
 
-    public class DSA {
+public class DSA {
 
-        public class QuickSort {
     public static int partition(int arr[], int low, int high) {
         int pivot = arr[high];
         int i = low - 1;
@@ -194,7 +193,6 @@ public class DSA {
         for (int j = low; j < high; j++) {
             if (arr[j] < pivot) {
                 i++;
-
                 // swap
                 int temp = arr[i];
                 arr[i] = arr[j];
@@ -204,45 +202,36 @@ public class DSA {
 
         i++;
         int temp = arr[i];
-        arr[i] = pivot;
+        arr[i] = arr[high];
         arr[high] = temp;
 
         return i; // pivot index
+    }
+
+    public static void quickSort(int arr[], int low, int high) {
+        if (low < high) {
+            int pidx = partition(arr, low, high);
+            quickSort(arr, low, pidx - 1);
+            quickSort(arr, pidx + 1, high);
+        }
+    }
+
+    public static void printArray(int arr[]) {
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + " ");
+        }
+        System.out.println();
+    }
+
+    public static void main(String[] args) {
+        int arr[] = { 7, 8, 3, 1, 2 };
+        quickSort(arr, 0, arr.length - 1);
+        printArray(arr);
     }
 }
 
 
 
-        public static void Quicksort(int arr[], int low, int high){
-            if(low<high){
-                int pidx = partition(arr,low,high);
-
-                Quicksort(arr, low , pidx-1);
-                Quicksort(arr, pidx+1 , high);
-            }
-        }
-
-        public static void printArray(int arr[]) {
-            for (int i = 0; i < arr.length; i++) {
-                System.out.print(arr[i] + " ");
-            }
-            System.out.println();
-        }
-
-      
-
-        public static void main(String[] args) {
-            int arr[] = { 7, 8, 3, 1, 2 };
-            n = arr.length;
-            
-
-
-
-        }
-
-        
-    }
-    
 
 
 
@@ -276,11 +265,7 @@ public class DSA {
 
 
 
-
-
-
-
-// Merge
+// Merge sort
 public class DSA {
     public static void conquer(int arr[], int si, int mid, int ei) {
         int merged[] = new int[ei - si + 1];
@@ -337,6 +322,128 @@ public class DSA {
         System.out.println();
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// linear search 
+
+public class DSA {
+    public static int linearSearch(int arr[], int key) {
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == key) {
+                return i; // return index if found
+            }
+        }
+        return -1; // not found
+    }
+
+    public static void main(String[] args) {
+        int arr[] = {2, 4, 5, 7};
+        int key = 5;
+        int index = linearSearch(arr, key);
+
+        if (index != -1) {
+            System.out.println("Element " + key + " found at index: " + index);
+        } else {
+            System.out.println("Element " + key + " not found.");
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// binary search
+
+public class DSA {
+    public static int binarySearch(int arr[], int key) {
+        int low = 0, high = arr.length - 1;
+        while (low <= high) {
+            int mid = low + (high - low) / 2;
+            if (arr[mid] == key) {
+                return mid; // found
+            } else if (arr[mid] < key) {
+                low = mid + 1;
+            } else {
+                high = mid - 1;
+            }
+        }
+        return -1; // not found
+    }
+
+    public static void main(String[] args) {
+        int arr[] = {1, 2, 3, 4, 5, 7, 8}; // must be sorted
+        int key = 5;
+        int index = binarySearch(arr, key);
+
+        if (index != -1) {
+            System.out.println("Element " + key + " found at index: " + index);
+        } else {
+            System.out.println("Element " + key + " not found.");
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
