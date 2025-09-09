@@ -1,9 +1,8 @@
 // Sorting ///// ///
 // bubble Sorting
 
-// dfsvfdgvf
 
-public class Current {
+public class DSA {
 
     for(
     int i = 0;i<arr.length;i++)
@@ -29,16 +28,16 @@ public class Current {
              
 
                 
-            }
+                      }      }
             
  
-
-
+        }
+        }
 
 
 // selection sort
 
-public class Current {
+public class DSA {
 
     public static void printarray(int arr[]) {
         for (int i = 0; i < arr.length; i++) {
@@ -69,7 +68,7 @@ public class Current {
             arr[i] = temp;
         }
 
-
+    }
 
 
 
@@ -84,7 +83,7 @@ public class Current {
 // Array /// 
 
 // calculate thr suum of all the array in the given array
-public class current {
+public class DSA {
     void sumofarray(){
         int arr[] = {2,4,5,7};
         int sum =0;
@@ -97,7 +96,7 @@ public class current {
     }
     
     public static void main(String[] args) {
-        current obj = new current();
+        DSA obj = new DSA();
         obj.sumofarray();         
     }
 }
@@ -121,7 +120,7 @@ public class current {
 
 // find the bigggest element in the array 
 
-public class current {
+public class DSA {
     void biggestarray(){
         int arr[] = {2,4,5,7};
         int bigggest =0;
@@ -138,7 +137,7 @@ public class current {
     }
     
     public static void main(String[] args) {
-        current obj = new current();
+        DSA obj = new DSA();
         obj.biggestarray();         
     }
 }
@@ -156,7 +155,7 @@ public class current {
 
 // find the bigggest element in the array 
 
-public class current {
+public class DSA {
     void biggestarray(){
         int arr[] = {2,4,5,7};
         int bigggest =0;
@@ -173,7 +172,7 @@ public class current {
     }
     
     public static void main(String[] args) {
-        current obj = new current();
+        DSA obj = new DSA();
         obj.biggestarray();         
     }
 }
@@ -197,7 +196,7 @@ public class current {
 
 
 // Search if the element is present -> return index or else -1
-public class Current {
+public class DSA {
     public int presentElement(int element) {
         int arr[] = {2, 4, 5, 7};
 
@@ -210,7 +209,7 @@ public class Current {
     }
 
     public static void main(String[] args) {
-        Current obj = new Current();
+        DSA obj = new DSA();
         int elementToSearch = 5;   // try changing this value
         int index = obj.presentElement(elementToSearch);
 
