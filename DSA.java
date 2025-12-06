@@ -127,7 +127,7 @@ public class DSA {
 
 
 
-    // insertion sort
+    // selection sort
     // is case me 2 part me divide krdete h sorted and unsorted aur unsorted ko
     // sorted me lejate h to sorted bda hota jata h
 
@@ -682,6 +682,192 @@ public class DSA {
 
 
 
+public class Current {
+    public static void main(String[] args) {
+        ajay(1);
+
+    }
+
+    public static void ajay(int n) {
+        if (n == 10) {
+            return;
+        }
+        System.out.println("GHodxnjvkxfbkjaxkj");
+        ajay(n + 1);
+    }
+
+}
+
+
+
+
+
+
+// print from n to 1
+public class Current {
+    public static void main(String[] args) {
+        print(5);
+
+    }
+
+    public static void print(int n) {
+        if (n == 0) {
+            return;
+        }
+        System.out.println(n);
+        print(n - 1);
+    }
+
+}
+
+
+
+
+// Method-1 print from  1 to n  --------isko global bnake 1 hee variable ko pass kro 
+
+
+import java.util.*;
+
+public class Current {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+         int n = sc.nextInt();
+        print(1,n);
+
+    }
+
+    public static void print(int x, int n) {
+        if (x > n) {
+            return;
+        }
+        System.out.println(x);
+        print(x+1, n);
+    }
+
+}
+
+ 
+
+
+
+
+
+
+// Method 2 - print from  1 to n  --------isko global bnake 1 hee variable ko pass kro 
+
+import java.util.*;
+
+public class Current {
+    static int n;
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+         n = sc.nextInt();
+        print(1);
+
+    }
+
+    public static void print(int x) {
+        if (x > n) {
+            return;
+        }
+        System.out.println(x);
+        print(x+1);
+    }
+
+}
+
+ 
+
+
+
+
+
+
+
+// print decreasing-increasin
+
+import java.util.Scanner;
+
+public class Current {
+    
+    public static int fact(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        
+     if (n<=1) {
+         return;
+     }
+     int ans = n*fact(n-1);
+     return ans;
+        
+    }
+}
+
+
+
+
+
+
+
+// a raised to power b
+
+import java.util.Scanner;
+
+public class Current {
+
+    public static int pow(int a, int b) {
+        if (b == 0) {
+            return 1;
+        }
+        return a * pow(a, b - 1);
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter number");
+        int a = sc.nextInt();
+        System.out.println("Enter power");
+        int b = sc.nextInt();
+        System.out.println(a + " raised to power "+ b + " is " +pow(a,b));
+        
+        
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+//notmal reversing 
+
+public class Current {
+
+    public static void main(String[] args) {
+        int n = 345645;
+        int r = 0;
+        
+        while (n!=0) {
+            r = r* 10;
+            r = r +(n%10);
+            n = n/10;
+        }
+        System.out.println(r);
+    }
+}
+
+
+
+
 
 
 
@@ -738,5 +924,3 @@ public class Node {
     }
 
 }
-
-

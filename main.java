@@ -1,91 +1,104 @@
 import java.util.Scanner;
 
-// patient details
-class Patient {
-    String name;
-    String bloodGroup;
-    int priority;     
-    int serviceTime;    
-    int waitingTime;
-    int turnaroundTime;
-    int completionTime;
+class Stack {
+    int top;
+    int[] stack;
+    int size;
 
-    Patient(String name, String bloodGroup, int priority, int serviceTime) {
-        this.name = name;
-        this.bloodGroup = bloodGroup;
-        this.priority = priority;
-        this.serviceTime = serviceTime;
+    Stack(int size) {
+        this.size = size;
+        stack = new int[size];
+        top = -1;
+    }
+
+    void push(int value) {
+        if (top == size - 1)
+            System.out.println("Stack Overflow!");
+        else
+            stack[++top] = value;
+    }
+
+    void pop() {
+        if (top == -1)
+            System.out.println("Stack Underflow!");
+        else
+            System.out.println("Popped: " + stack[top--]);
+    }
+
+    void display() {
+        if (top == -1)
+            System.out.println("Stack is empty!");
+        else {
+            System.out.print("Stack: ");
+            for (int i = 0; i <= top; i++)
+                System.out.print(stack[i] + " ");
+            System.out.println();
+        }
     }
 }
 
-// Main class
-public class main {
+class Queue {
+    int front, rear, size;
+    int[] queue;
+
+    Queue(int size) {
+        this.size = size;
+        queue = new int[size];
+        front = rear = -1;
+    }
+
+    void enqueue(int value) {
+        if (rear == size - 1)
+            System.out.println("Queue Overflow!");
+        else {
+            if (front == -1)
+                front = 0;
+            queue[++rear] = value;
+        }
+    }
+
+    void dequeue() {
+        if (front == -1 || front > rear)
+            System.out.println("Queue Underflow!");
+        else
+            System.out.println("Dequeued: " + queue[front++]);
+    }
+
+    void display() {
+        if (front == -1 || front > rear)
+            System.out.println("Queue is empty!");
+        else {
+            System.out.print("Queue: ");
+            for (int i = front; i <= rear; i++)
+                System.out.print(queue[i] + " ");
+            System.out.println();
+        }
+    }
+}
+
+public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        Stack stack = new Stack(5);
+        Queue queue = new Queue(5);
 
-        System.out.print("Enter number of patients: ");
-        int n = sc.nextInt();
-        sc.nextLine(); 
+        // Stack operations
+        System.out.println("\n--- Stack Operations ---");
+        stack.push(10);
+        stack.push(20);
+        stack.push(30);
+        stack.display();
+        stack.pop();
+        stack.display();
 
-        Patient[] patients = new Patient[n];
-
-        // --- Input details for all patients ---
-        for (int i = 0; i < n; i++) {
-            System.out.println("\nEnter details for Patient " + (i + 1) + ":");
-            System.out.print("Name: ");
-            String name = sc.nextLine();
-            System.out.print("Blood Group: ");
-            String bloodGroup = sc.nextLine();
-            System.out.print("Priority (1 = Emergency, 2 = Urgent, 3 = Normal): ");
-            int priority = sc.nextInt();
-            System.out.print("Service Time (in minutes): ");
-            int serviceTime = sc.nextInt();
-            sc.nextLine(); 
-
-            patients[i] = new Patient(name, bloodGroup, priority, serviceTime);
-        }
-
-        // --- Sort by priority (lower number = higher priority) ---
-        for (int i = 0; i < n - 1; i++) {
-            for (int j = i + 1; j < n; j++) {
-                if (patients[i].priority > patients[j].priority) {
-                    Patient temp = patients[i];
-                    patients[i] = patients[j];
-                    patients[j] = temp;
-                }
-            }
-        }
-
-        // --- Calculate Waiting, Turnaround, and Completion Times ---
-        int currentTime = 0;
-        for (int i = 0; i < n; i++) {
-            patients[i].waitingTime = currentTime;
-            patients[i].completionTime = currentTime + patients[i].serviceTime;
-            patients[i].turnaroundTime = patients[i].completionTime;
-            currentTime += patients[i].serviceTime;
-        }
-
-        // --- Display results ---
-        System.out.println("\n=== Blood Bank Service Summary (Priority Scheduling) ===");
-        System.out.printf("%-10s %-8s %-9s %-13s %-13s %-16s %-15s\n",
-                "Name", "B.Group", "Priority", "Service Time", "Waiting Time",
-                "Turnaround Time", "Completion Time");
-        System.out.println("---------------------------------------------------------------------------------------------");
-
-        double totalWT = 0, totalTAT = 0;
-
-        for (Patient p : patients) {
-            System.out.printf("%-10s %-8s %-9d %-13d %-13d %-16d %-15d\n",
-                    p.name, p.bloodGroup, p.priority, p.serviceTime,
-                    p.waitingTime, p.turnaroundTime, p.completionTime);
-
-            totalWT += p.waitingTime;
-            totalTAT += p.turnaroundTime;
-        }
-
-        // --- Display averages ---
-        System.out.println("\nAverage Waiting Time: " + (totalWT / n));
-        System.out.println("Average Turnaround Time: " + (totalTAT / n));
+        // Queue operations
+        System.out.println("\n--- Queue Operations ---");
+        queue.enqueue(1);
+        queue.enqueue(2);
+        queue.enqueue(3);
+        queue.display();
+        queue.dequeue();
+        queue.display();
 
         sc.close();
     }
